@@ -109,7 +109,7 @@ class ConnectionMethods {
       connectionPage.scaffoldKey.currentState.showSnackBar(
         SnackBar(
           duration: Duration(seconds: 5),
-          content: Text("Unable to list directory $path\n$e"),
+          content: Text("파일 리스트를 찾을수 없습니다 $path\n$e"),
         ),
       );
     }
@@ -244,8 +244,8 @@ class ConnectionMethods {
         return CustomAlertDialog(
           title: Text(
             filenames.length == 1
-                ? "Delete '${filenames[0]}'?"
-                : "Delete ${filenames.length} files?",
+                ? "'${filenames[0]}' 파일을 삭제합니까?"
+                : "${filenames.length}개의 파일들을 삭제합니까?",
           ),
           actions: <Widget>[
             FlatButton(
@@ -258,7 +258,7 @@ class ConnectionMethods {
                 left: 14.0,
                 right: 14.0,
               ),
-              child: Text("Cancel"),
+              child: Text("취소"),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -276,7 +276,7 @@ class ConnectionMethods {
                 right: 14.0,
               ),
               child: Text(
-                "OK",
+                "확인",
                 style: TextStyle(
                   color: Provider.of<CustomTheme>(context).isLightTheme(context)
                       ? Colors.white

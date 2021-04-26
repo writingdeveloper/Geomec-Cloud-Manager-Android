@@ -74,7 +74,7 @@ class MyAppState extends State<MyApp> {
     );
 
     return MaterialApp(
-      title: 'RemoteFiles',
+      title: 'Geomec Cloud Manager',
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),

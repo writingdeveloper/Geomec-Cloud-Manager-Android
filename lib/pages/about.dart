@@ -62,7 +62,8 @@ class _AboutPageState extends State<AboutPage> {
     } else {
       _scaffoldKey.currentState.showSnackBar(
         SnackBar(
-          content: Text("Could not launch $url"),
+          // content: Text("Could not launch $url"),
+          content: Text("플레이스토어 업로드를 $url"),
         ),
       );
     }
@@ -156,7 +157,7 @@ class _AboutPageState extends State<AboutPage> {
                   context,
                   iconData: MdiIcons.githubCircle,
                   label: "GitHub",
-                  url: "https://github.com/niklas-8/RemoteFiles",
+                  url: "https://github.com/Geomec-International",
                 ),
                 _buildButton(
                   context,

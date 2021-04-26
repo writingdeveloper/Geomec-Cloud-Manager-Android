@@ -26,6 +26,7 @@ class _EditConnectionPageState extends State<EditConnectionPage> {
   bool _passwordIsVisible = false;
 
   Map<String, TextEditingController> _textEditingController = {
+    // "name": TextEditingController(),
     "name": TextEditingController(),
     "address": TextEditingController(),
     "port": TextEditingController(),

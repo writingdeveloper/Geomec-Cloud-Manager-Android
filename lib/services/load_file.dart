@@ -330,7 +330,7 @@ class LoadFile {
               (Platform.isIOS ? "" : "\nSaved file to $saveLocation"),
         ),
         action: SnackBarAction(
-          label: "Show file",
+          label: "파일 열기",
           textColor: Colors.white,
           onPressed: () async {
             if (Platform.isIOS) {

@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               width: constraints.maxWidth - 2 * 44,
                               padding: EdgeInsets.only(left: 14),
                               child: Text(
-                                "RemoteFiles",
+                                "Geomec Cloud Manager",
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Material(
                               color: Colors.transparent,
                               child: Tooltip(
-                                message: "Search",
+                                message: "검색",
                                 child: CustomIconButton(
                                   icon: Icon(Icons.search),
                                   onPressed: () {

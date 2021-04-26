@@ -120,7 +120,7 @@ class _SettingsPageState extends State<SettingsPage>
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _buildHeadline("Save files to"),
+          _buildHeadline("파일 저장 디렉토리"),
           Padding(
             padding: EdgeInsets.only(
               left: 16,
@@ -132,7 +132,7 @@ class _SettingsPageState extends State<SettingsPage>
               child: TextField(
                 controller: _downloadPathTextController,
                 decoration: InputDecoration(
-                  labelText: "Path",
+                  labelText: "경로",
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Theme.of(context).accentColor,
@@ -214,7 +214,7 @@ class _SettingsPageState extends State<SettingsPage>
             },
           ),
         ),
-        title: Text("Settings", style: TextStyle(fontSize: 19)),
+        title: Text("앱 설정", style: TextStyle(fontSize: 19)),
         titleSpacing: 4,
         elevation: 2,
       ),
@@ -226,19 +226,19 @@ class _SettingsPageState extends State<SettingsPage>
               physics: BouncingScrollPhysics(),
               children: <Widget>[
                 SizedBox(height: 4),
-                _buildHeadline("View"),
+                _buildHeadline("보기 설정"),
                 _buildRadioListTile(
-                  titleLabel: "List",
+                  titleLabel: "리스트",
                   value: "list",
                   isView: true,
                 ),
                 _buildRadioListTile(
-                  titleLabel: "Detailed",
+                  titleLabel: "상세 정보 표시",
                   value: "detailed",
                   isView: true,
                 ),
                 _buildRadioListTile(
-                  titleLabel: "Grid",
+                  titleLabel: "그리드",
                   value: "grid",
                   isView: true,
                 ),
@@ -272,7 +272,7 @@ class _SettingsPageState extends State<SettingsPage>
                 Divider(),
                 _buildHeadline("Appearance"),
                 ListTile(
-                  title: Text("Theme"),
+                  title: Text("테마"),
                   trailing: Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Opacity(
@@ -298,10 +298,10 @@ class _SettingsPageState extends State<SettingsPage>
                               children: <Widget>[
                                 RadioListTile(
                                   activeColor: Theme.of(context).accentColor,
-                                  title: Text("Automatic"),
+                                  title: Text("자동"),
                                   subtitle: Text(
-                                      "Chooses light or dark theme " +
-                                          "based on your system settings"),
+                                      "시스템 테마 정보 설정을 따릅니다\n" +
+                                  "자동으로 설정되는 기능입니다"),
                                   value: "automatic",
                                   groupValue: model.themeValue,
                                   onChanged: (String value) async {
@@ -311,7 +311,7 @@ class _SettingsPageState extends State<SettingsPage>
                                 ),
                                 RadioListTile(
                                   activeColor: Theme.of(context).accentColor,
-                                  title: Text("Light"),
+                                  title: Text("밝은 테마"),
                                   value: "light",
                                   groupValue: model.themeValue,
                                   onChanged: (String value) async {
@@ -321,7 +321,7 @@ class _SettingsPageState extends State<SettingsPage>
                                 ),
                                 RadioListTile(
                                   activeColor: Theme.of(context).accentColor,
-                                  title: Text("Dark"),
+                                  title: Text("어두운 테마"),
                                   value: "dark",
                                   groupValue: model.themeValue,
                                   onChanged: (String value) async {
@@ -331,7 +331,7 @@ class _SettingsPageState extends State<SettingsPage>
                                 ),
                                 RadioListTile(
                                   activeColor: Theme.of(context).accentColor,
-                                  title: Text("Black"),
+                                  title: Text("검정색 테마"),
                                   value: "black",
                                   groupValue: model.themeValue,
                                   onChanged: (String value) async {
@@ -349,8 +349,8 @@ class _SettingsPageState extends State<SettingsPage>
                 ),
                 SwitchListTile(
                   activeColor: Theme.of(context).accentColor,
-                  title: Text("Show dotfiles"),
-                  subtitle: Text("Whether to show files that begin with a dot"),
+                  title: Text("숨겨진 파일 표시"),
+                  subtitle: Text(".으로 시작하는 파일 표시 유무 설정"),
                   value: SettingsVariables.showHiddenFiles,
                   onChanged: (bool value) async {
                     await SettingsVariables.setShowHiddenFiles(value);
@@ -358,7 +358,7 @@ class _SettingsPageState extends State<SettingsPage>
                   },
                 ),
                 ListTile(
-                  title: Text("Unit for filesize"),
+                  title: Text("파일 사이즈 표시 설정"),
                   trailing: Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Opacity(
@@ -379,7 +379,7 @@ class _SettingsPageState extends State<SettingsPage>
                             children: <Widget>[
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Automatic"),
+                                title: Text("자동"),
                                 value: "automatic",
                                 groupValue: SettingsVariables.filesizeUnit,
                                 onChanged: (String value) async {
@@ -390,7 +390,7 @@ class _SettingsPageState extends State<SettingsPage>
                               ),
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Byte"),
+                                title: Text("바이트"),
                                 value: "B",
                                 groupValue: SettingsVariables.filesizeUnit,
                                 onChanged: (String value) async {
@@ -401,7 +401,7 @@ class _SettingsPageState extends State<SettingsPage>
                               ),
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Kilobyte"),
+                                title: Text("킬로바이트"),
                                 value: "KB",
                                 groupValue: SettingsVariables.filesizeUnit,
                                 onChanged: (String value) async {
@@ -412,7 +412,7 @@ class _SettingsPageState extends State<SettingsPage>
                               ),
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Megabyte"),
+                                title: Text("메가바이트"),
                                 value: "MB",
                                 groupValue: SettingsVariables.filesizeUnit,
                                 onChanged: (String value) async {
@@ -423,7 +423,7 @@ class _SettingsPageState extends State<SettingsPage>
                               ),
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Gigabyte"),
+                                title: Text("기가바이트"),
                                 value: "GB",
                                 groupValue: SettingsVariables.filesizeUnit,
                                 onChanged: (String value) async {
@@ -442,9 +442,9 @@ class _SettingsPageState extends State<SettingsPage>
                 Divider(),
                 _buildSaveToWidget(),
                 Divider(),
-                _buildHeadline("Shell commands"),
+                _buildHeadline("SSH 명렁어 기본 설정"),
                 ListTile(
-                  title: Text("Move"),
+                  title: Text("이동"),
                   trailing: Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Opacity(
@@ -464,9 +464,8 @@ class _SettingsPageState extends State<SettingsPage>
                             children: <Widget>[
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Default"),
-                                subtitle: Text("Uses the shell command 'mv' " +
-                                    "to move files and folders"),
+                                title: Text("기본 설정 (권장 설정)"),
+                                subtitle: Text("폴더나 파일을 이동할 때 mv 명령어를 사용합니다"),
                                 value: "default",
                                 groupValue: _moveCommandGroupValue,
                                 onChanged: (String value) async {
@@ -484,7 +483,7 @@ class _SettingsPageState extends State<SettingsPage>
                                   : Container(),
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Custom"),
+                                title: Text("사용자 명령어"),
                                 value: "custom",
                                 groupValue: _moveCommandGroupValue,
                                 onChanged: (String value) async {
@@ -501,7 +500,7 @@ class _SettingsPageState extends State<SettingsPage>
                                           horizontal: 19, vertical: 10),
                                       child: TextField(
                                         decoration: InputDecoration(
-                                          labelText: "Shell command",
+                                          labelText: "SSH 명령어",
                                         ),
                                         controller: _moveCommandTextController,
                                         onChanged: (String value) async {
@@ -518,8 +517,7 @@ class _SettingsPageState extends State<SettingsPage>
                                       title: Padding(
                                         padding: EdgeInsets.only(left: 6),
                                         child: Text(
-                                          "Append '-r' when moving " +
-                                              "directories",
+                                          "디렉토리를 이동시킬 때 SSH 명령어에 -r 옵션 추가",
                                         ),
                                       ),
                                       value:
@@ -539,7 +537,7 @@ class _SettingsPageState extends State<SettingsPage>
                   },
                 ),
                 ListTile(
-                  title: Text("Copy"),
+                  title: Text("복사"),
                   trailing: Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Opacity(
@@ -559,10 +557,8 @@ class _SettingsPageState extends State<SettingsPage>
                             children: <Widget>[
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Default"),
-                                subtitle: Text("Uses the shell command 'cp' " +
-                                    "to copy files and 'cp -r' to copy " +
-                                    "folders"),
+                                title: Text("기본 설정 (권장 설정)"),
+                                subtitle: Text("파일들을 복사할 때에는 cp 명령어를 사용하고 폴더들을 복사할 때에는 cp 명령어에 -r 옵션을 추가합니다"),
                                 value: "default",
                                 groupValue: _copyCommandGroupValue,
                                 onChanged: (String value) async {
@@ -580,7 +576,7 @@ class _SettingsPageState extends State<SettingsPage>
                                   : Container(),
                               RadioListTile(
                                 activeColor: Theme.of(context).accentColor,
-                                title: Text("Custom"),
+                                title: Text("사용자 설정"),
                                 value: "custom",
                                 groupValue: _copyCommandGroupValue,
                                 onChanged: (String value) async {
@@ -597,7 +593,7 @@ class _SettingsPageState extends State<SettingsPage>
                                           horizontal: 19, vertical: 10),
                                       child: TextField(
                                         decoration: InputDecoration(
-                                          labelText: "Shell command",
+                                          labelText: "SSH 명령어",
                                         ),
                                         controller: _copyCommandTextController,
                                         onChanged: (String value) async {
@@ -614,8 +610,7 @@ class _SettingsPageState extends State<SettingsPage>
                                       title: Padding(
                                         padding: EdgeInsets.only(left: 6),
                                         child: Text(
-                                          "Append '-r' when copying " +
-                                              "directories",
+                                          "디렉토리를 이동시킬 때 SSH 명령어에 -r 옵션 추가"
                                         ),
                                       ),
                                       value:
@@ -635,15 +630,15 @@ class _SettingsPageState extends State<SettingsPage>
                   },
                 ),
                 Divider(),
-                _buildHeadline("Miscellaneous"),
+                _buildHeadline("기타 설정"),
                 ListTile(
-                  title: Text("Delete all connections"),
+                  title: Text("모든 연결 해제"),
                   onTap: () {
                     customShowDialog(
                       context: context,
                       builder: (context) => CustomAlertDialog(
                         title: Text(
-                          "Delete all connections?\nThis cannot be undone.",
+                          "모든 연결을 해제합니까?\n이 작업은 되돌릴수 없습니다.",
                         ),
                         actions: <Widget>[
                           FlatButton(
@@ -652,7 +647,7 @@ class _SettingsPageState extends State<SettingsPage>
                             ),
                             padding: EdgeInsets.only(
                                 top: 8.5, bottom: 8.0, left: 14.0, right: 14.0),
-                            child: Text("Cancel"),
+                            child: Text("취소"),
                             onPressed: () {
                               Navigator.pop(context);
                             },
@@ -666,7 +661,7 @@ class _SettingsPageState extends State<SettingsPage>
                             padding: EdgeInsets.only(
                                 top: 8.5, bottom: 8.0, left: 14.0, right: 14.0),
                             child: Text(
-                              "OK",
+                              "확인",
                               style: TextStyle(
                                 color: Provider.of<CustomTheme>(context)
                                         .isLightTheme(context)
@@ -689,9 +684,9 @@ class _SettingsPageState extends State<SettingsPage>
                   },
                 ),
                 Divider(),
-                _buildHeadline("About"),
+                _buildHeadline("프로그램 정보"),
                 ListTile(
-                  title: Text("About RemoteFiles"),
+                  title: Text("Geomec Cloud Manager 정보"),
                   onTap: () {
                     Navigator.push(
                       context,

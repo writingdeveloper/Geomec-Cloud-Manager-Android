@@ -326,8 +326,8 @@ class _ConnectionPageState extends State<ConnectionPage>
                         builder: (context) {
                           return CustomAlertDialog(
                             title: Text(
-                              "There are already files with the same name. " +
-                                  "Replace files?",
+                              "이미 같은 이름을 가진 파일들이 존재합니다.\n" +
+                                  "파일들을 대체합니까?",
                               style: TextStyle(fontFamily: "GoogleSans"),
                             ),
                             actions: <Widget>[
@@ -341,7 +341,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                                   left: 14.0,
                                   right: 14.0,
                                 ),
-                                child: Text("Cancel"),
+                                child: Text("취소"),
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
@@ -359,7 +359,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                                   right: 14.0,
                                 ),
                                 child: Text(
-                                  "OK",
+                                  "확인",
                                   style: TextStyle(
                                     color: Provider.of<CustomTheme>(context)
                                             .isLightTheme(context)
@@ -539,10 +539,10 @@ class _ConnectionPageState extends State<ConnectionPage>
                 context: context,
                 builder: (context) {
                   return CustomAlertDialog(
-                    title: Text("Create Folder"),
+                    title: Text("폴더 생성"),
                     content: TextField(
                       decoration: InputDecoration(
-                        labelText: "Name",
+                        labelText: "이름",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Theme.of(context).accentColor,
@@ -771,13 +771,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                       _isSelectionMode
                           ? Padding(
                               padding: EdgeInsets.only(left: 50, top: 15.5),
-                              child: Text(
-                                _getNumberOfSelectedItems().toString() +
-                                    " Item" +
-                                    (_getNumberOfSelectedItems() == 1
-                                        ? ""
-                                        : "s") +
-                                    " selected",
+                              child: Text("파일 ${_getNumberOfSelectedItems().toString()}개가 선택되었습니다",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -800,7 +794,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                                     ),
                                     focusedBorder: InputBorder.none,
                                     focusColor: Theme.of(context).accentColor,
-                                    hintText: "Search",
+                                    hintText: "검색",
                                   ),
                                   onChanged: (String value) {
                                     if (value.isEmpty) {

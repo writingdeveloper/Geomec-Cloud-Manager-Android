@@ -60,7 +60,7 @@ class ConnectionDialog extends StatelessWidget {
     return CustomAlertDialog(
       title: Text(
         isConnectionPage
-            ? "Current connection"
+            ? "현재 연결 정보"
             : (connection.name != "" ? connection.name : connection.address),
       ),
       content: Container(
@@ -71,7 +71,7 @@ class ConnectionDialog extends StatelessWidget {
             Opacity(
               opacity: .8,
               child: Table(
-                columnWidths: {0: FixedColumnWidth(120.0)},
+                columnWidths: {0: FixedColumnWidth(80.0)},
                 children: [
                   isConnectionPage
                       ? TableRow(children: [
@@ -79,19 +79,19 @@ class ConnectionDialog extends StatelessWidget {
                           Container(),
                         ])
                       : TableRow(children: [
-                          Text("Name:"),
+                          Text("이름:"),
                           Text(connection.name != "" ? connection.name : "-"),
                         ]),
                   TableRow(children: [
-                    Text("Address:"),
+                    Text("연결 주소:"),
                     Text(connection.address),
                   ]),
                   TableRow(children: [
-                    Text("Port:"),
+                    Text("포트:"),
                     Text(connection.port),
                   ]),
                   TableRow(children: [
-                    Text("Username:"),
+                    Text("아이디:"),
                     Text(
                       connection.username != "" ? connection.username : "-",
                       style: TextStyle(),
@@ -99,14 +99,14 @@ class ConnectionDialog extends StatelessWidget {
                   ]),
                   TableRow(
                     children: [
-                      Text("Password/Key:"),
+                      Text("비밀번호/보안키:"),
                       connection.passwordOrKey != ""
                           ? _buildPasswordRow(connection.passwordOrKey.length)
                           : Text("-"),
                     ],
                   ),
                   TableRow(children: [
-                    Text("Path:"),
+                    Text("경로:"),
                     Text(connection.path),
                   ]),
                 ],
