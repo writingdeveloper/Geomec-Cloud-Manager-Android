@@ -132,7 +132,7 @@ class LoadFile {
                         left: 14.0,
                         right: 14.0,
                       ),
-                      child: Text("Cancel"),
+                      child: Text("취소"),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -150,7 +150,7 @@ class LoadFile {
                         right: 14.0,
                       ),
                       child: Text(
-                        "OK",
+                        "확인",
                         style: TextStyle(
                           color: Provider.of<CustomTheme>(context)
                                   .isLightTheme(context)
@@ -249,7 +249,7 @@ class LoadFile {
         builder: (context) {
           return CustomAlertDialog(
             title: Text(
-              "There is already a file with the same name. Replace $filename?",
+              "$filename 이름을 가진 파일이 이미 존재합니다. 덮어쓰기를 시도합니까?",
               style: TextStyle(fontFamily: "GoogleSans"),
             ),
             actions: <Widget>[
@@ -353,7 +353,7 @@ class LoadFile {
     currentConnectionPage.scaffoldKey.currentState.showSnackBar(
       SnackBar(
         duration: Duration(seconds: 6),
-        content: Text("Upload completed. Refresh the page to see the changes."),
+        content: Text("업로드가 완료되었습니다. 새로고침을 시도하여 데이터를 최신으로 반영하십시요."),
       ),
     );
   }
