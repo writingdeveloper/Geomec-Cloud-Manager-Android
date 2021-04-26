@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   border: InputBorder.none,
                                   focusedBorder: InputBorder.none,
                                   focusColor: Theme.of(context).accentColor,
-                                  hintText: "Search",
+                                  hintText: "검색",
                                 ),
                                 onChanged: (String value) {
                                   Provider.of<HomeModel>(context).searchQuery =
