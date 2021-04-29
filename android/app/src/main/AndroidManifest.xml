@@ -8,7 +8,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="RemoteFiles"
+        android:label="Geomec Cloud Manager"
         android:icon="@mipmap/ic_launcher"
         android:fullBackupContent="@xml/my_backup_rules">
         <activity
