@@ -296,19 +296,20 @@ class _SettingsPageState extends State<SettingsPage>
                             return Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                RadioListTile(
-                                  activeColor: Theme.of(context).accentColor,
-                                  title: Text("자동"),
-                                  subtitle: Text(
-                                      "시스템 테마 정보 설정을 따릅니다\n" +
-                                  "자동으로 설정되는 기능입니다"),
-                                  value: "automatic",
-                                  groupValue: model.themeValue,
-                                  onChanged: (String value) async {
-                                    await model.setThemeValue(value);
-                                    setState(() {});
-                                  },
-                                ),
+                                // TODO 제거 여부 결정 Automatic 기본 테마
+                                // RadioListTile(
+                                //   activeColor: Theme.of(context).accentColor,
+                                //   title: Text("자동"),
+                                //   subtitle: Text(
+                                //       "시스템 테마 정보 설정을 따릅니다\n" +
+                                //   "자동으로 설정되는 기능입니다"),
+                                //   value: "automatic",
+                                //   groupValue: model.themeValue,
+                                //   onChanged: (String value) async {
+                                //     await model.setThemeValue(value);
+                                //     setState(() {});
+                                //   },
+                                // ),
                                 RadioListTile(
                                   activeColor: Theme.of(context).accentColor,
                                   title: Text("밝은 테마"),

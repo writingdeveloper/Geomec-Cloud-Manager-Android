@@ -39,17 +39,17 @@ class MyAppState extends State<MyApp> {
     });
     return null;
   }
-
-  ThemeData _getLightTheme(CustomTheme themeModel) {
-    if (themeModel.themeValue == "dark") {
-      return CustomThemes.dark;
-    } else if (themeModel.themeValue == "black") {
-      return CustomThemes.black;
-    } else {
-      _automaticThemeIsLight = true;
-      return CustomThemes.light;
-    }
-  }
+  // TODO : 기본설정 함수 제거후 강제 Dark 테마 설정으로 불필요. settings.dart와도 연관이 있음
+  // ThemeData _getLightTheme(CustomTheme themeModel) {
+  //   if (themeModel.themeValue == "dark") {
+  //     return CustomThemes.dark;
+  //   } else if (themeModel.themeValue == "black") {
+  //     return CustomThemes.black;
+  //   } else {
+  //     _automaticThemeIsLight = true;
+  //     return CustomThemes.light;
+  //   }
+  // }
 
   ThemeData _getDarkTheme(CustomTheme themeModel) {
     if (themeModel.themeValue == "light") {
@@ -79,7 +79,8 @@ class MyAppState extends State<MyApp> {
       routes: {
         '/': (context) => HomePage(),
       },
-      theme: _getLightTheme(themeModel),
+      // theme: _getLightTheme(themeModel),
+      theme: _getDarkTheme(themeModel), // 기본 테마 설정 Dark
       darkTheme: _getDarkTheme(themeModel),
     );
   }
