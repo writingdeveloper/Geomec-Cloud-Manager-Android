@@ -38,11 +38,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.niklas8.remotefiles"
+        applicationId "com.geomec.cloudmanager"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 12
-        versionName "v0.1.0-beta"
+        versionName "v1.0.0"
         testInstrumentationRunner "android.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
