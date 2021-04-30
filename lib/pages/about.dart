@@ -34,7 +34,7 @@ class _AboutPageState extends State<AboutPage> {
     // Github Release로 최신버전 확인
     var result = await http.get(
       Uri.encodeFull(
-        "https://api.github.com/repos/niklas-8/RemoteFiles/releases",
+        "https://api.github.com/repos/writingdeveloper/Geomec-Cloud-Manager-Android/releases",
       ),
     );
     var content = json.decode(result.body);
@@ -213,14 +213,15 @@ class _AboutPageState extends State<AboutPage> {
                         _buildButton(
                           context,
                           iconData: Icons.open_in_new,
-                          label: "Update on PlayStore",
-                          url:
-                              "https://play.google.com/store/apps/details?id=com.niklas8.remotefiles",
+                          // label: "Update on PlayStore",
+                          label: "플레이스토어 업로드 준비중입니다",
+                          // url:
+                              // "https://play.google.com/store/apps/details",
                         ),
                         _buildButton(
                           context,
                           iconData: Icons.save_alt,
-                          label: "Download from GitHub",
+                          label: "Github으로부터 다운로드",
                           url: _latestVersion["assets"][0]
                               ["browser_download_url"],
                         ),
@@ -231,9 +232,8 @@ class _AboutPageState extends State<AboutPage> {
           ),
           Divider(),
           ListTile(
-            leading: Icon(MdiIcons.heartOutline),
-            title: Text("If you like the app please consider rating it " +
-                "on the Google PlayStore or donating via GitHub"),
+            leading: Icon(Icons.done),
+            title: Text("SSH 모듈이 정상적으로 작동중입니다. (SSH:POINT=>1001)"),
           ),
         ],
       ),
