@@ -19,7 +19,7 @@ class SettingsVariables {
   static Future<Directory> getDefaultDownloadDirectory() async {
     if (Platform.isAndroid) {
       Directory dir = await getExternalStorageDirectory();
-      return Directory(dir.path + "/RemoteFiles");
+      return Directory(dir.path + "/GeomecFiles");
     } else {
       return getApplicationDocumentsDirectory();
     }
