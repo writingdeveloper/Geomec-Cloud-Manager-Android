@@ -689,7 +689,7 @@ class _ConnectionPageState extends State<ConnectionPage>
                   connection: widget.connection,
                   isConnectionPage: true,
                   primaryButtonIconData: Icons.remove_circle_outline,
-                  primaryButtonLabel: "Disconnect",
+                  primaryButtonLabel: "연결 해제",
                   primaryButtonOnPressed: () {
                     var model = Provider.of<ConnectionModel>(context);
                     if (!model.isLoading) {

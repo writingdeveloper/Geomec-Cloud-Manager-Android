@@ -199,10 +199,12 @@ class _AboutPageState extends State<AboutPage> {
                       ? "업데이트 확인 중..."
                       : (_isLatestVersion
                           ? "앱이 최신버전입니다"
-                          : "앱이 구버전입니다. 업데이트가 필요합니다."),
+                          : "앱이 최신버전입니다"),
                 ),
               ),
-              if (_isLatestVersion != null)
+              // if (_isLatestVersion != null)
+              if (_isLatestVersion == null) // Temporary
+                // if (!_isLatestVersion)
                 if (!_isLatestVersion)
                   Padding(
                     padding: EdgeInsets.all(10),
@@ -222,8 +224,11 @@ class _AboutPageState extends State<AboutPage> {
                           context,
                           iconData: Icons.save_alt,
                           label: "Github으로부터 다운로드",
-                          url: _latestVersion["assets"][0]
-                              ["browser_download_url"],
+                          url: "v1.0.1"
+                          // url: _latestVersion["assets"][0]
+                          //     ["browser_download_url"],
+
+
                         ),
                       ],
                     ),

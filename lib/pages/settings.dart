@@ -270,9 +270,9 @@ class _SettingsPageState extends State<SettingsPage>
                   isView: false,
                 ),
                 Divider(),
-                _buildHeadline("Appearance"),
+                _buildHeadline("테마"),
                 ListTile(
-                  title: Text("테마"),
+                  title: Text("색상 테마"),
                   trailing: Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Opacity(
@@ -297,19 +297,19 @@ class _SettingsPageState extends State<SettingsPage>
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 // TODO 제거 여부 결정 Automatic 기본 테마
-                                // RadioListTile(
-                                //   activeColor: Theme.of(context).accentColor,
-                                //   title: Text("자동"),
-                                //   subtitle: Text(
-                                //       "시스템 테마 정보 설정을 따릅니다\n" +
-                                //   "자동으로 설정되는 기능입니다"),
-                                //   value: "automatic",
-                                //   groupValue: model.themeValue,
-                                //   onChanged: (String value) async {
-                                //     await model.setThemeValue(value);
-                                //     setState(() {});
-                                //   },
-                                // ),
+                                RadioListTile(
+                                  activeColor: Theme.of(context).accentColor,
+                                  title: Text("자동"),
+                                  subtitle: Text(
+                                      "시스템 테마 정보 설정을 따릅니다\n" +
+                                  "자동으로 설정되는 기능입니다"),
+                                  value: "automatic",
+                                  groupValue: model.themeValue,
+                                  onChanged: (String value) async {
+                                    await model.setThemeValue(value);
+                                    setState(() {});
+                                  },
+                                ),
                                 RadioListTile(
                                   activeColor: Theme.of(context).accentColor,
                                   title: Text("밝은 테마"),
