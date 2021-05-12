@@ -31,35 +31,35 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     lintOptions {
         disable 'InvalidPackage'
     }
 
     defaultConfig {
-        applicationId "com.geomec.cloudmanager"
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 12
-        versionName "v1.0.0"
+        applicationId "com.main.GeomecCloudManager"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 17
+        versionName "v1.0.4"
         testInstrumentationRunner "android.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
+//        multiDexEnabled true
     }
 
-//    signingConfigs {
-//        release {
-//            keyAlias keystoreProperties['keyAlias']
-//            keyPassword keystoreProperties['keyPassword']
-//            storeFile file(keystoreProperties['storeFile'])
-//            storePassword keystoreProperties['storePassword']
-//        }
-//    }
-//    buildTypes {
-//        release {
-//            signingConfig signingConfigs.release
-//        }
-//    }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
 }
 
 flutter {
@@ -70,6 +70,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.android.support:multidex:1.0.3'
-    compile 'com.android.support:multidex:1.0.3'
+//    implementation 'com.android.support:multidex:1.0.3'
+//    compile 'com.android.support:multidex:1.0.3'
 }
