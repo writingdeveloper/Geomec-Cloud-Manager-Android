@@ -282,7 +282,7 @@ class _ConnectionPageState extends State<ConnectionPage>
     if (_isSelectionMode) {
       widgets.add(
         Tooltip(
-          message: "Download",
+          message: "다운로드",
           child: Opacity(
             opacity: _selectedItemsAreFiles ? 1 : .5,
             child: FloatingActionRowButton(
@@ -391,7 +391,7 @@ class _ConnectionPageState extends State<ConnectionPage>
       );
       widgets.add(
         Tooltip(
-          message: "Delete",
+          message: "삭제",
           child: FloatingActionRowButton(
             icon: Icon(OMIcons.delete),
             onTap: () {

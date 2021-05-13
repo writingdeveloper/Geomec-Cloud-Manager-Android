@@ -49,7 +49,7 @@ class ConnectionMethods {
 
     ConnectionPage connectionPage = ConnectionPage(
       Connection(
-        address: address,
+        address: 'ddf',
         port: port,
         username: username,
         passwordOrKey: passwordOrKey,

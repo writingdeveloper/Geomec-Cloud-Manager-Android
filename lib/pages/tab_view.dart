@@ -141,7 +141,7 @@ class _TabViewPageState extends State<TabViewPage> {
                               ? OMIcons.edit
                               : Icons.star_border,
                           primaryButtonLabel:
-                              widget.isFavorites ? "Edit" : "Add to favorites",
+                              widget.isFavorites ? "수정" : "즐겨찾기에 추가",
                           primaryButtonOnPressed: () {
                             if (widget.isFavorites) {
                               Navigator.pop(context);
@@ -161,7 +161,7 @@ class _TabViewPageState extends State<TabViewPage> {
                           },
                           hasSecondaryButton: true,
                           secondaryButtonIconData: OMIcons.delete,
-                          secondaryButtonLabel: "Delete",
+                          secondaryButtonLabel: "삭제",
                           secondaryButtonOnPressed: () {
                             widget.removeConnectionAt(index);
                             setState(() {});
@@ -183,7 +183,7 @@ class _TabViewPageState extends State<TabViewPage> {
                         Scaffold.of(context).showSnackBar(
                           SnackBar(
                             duration: Duration(seconds: 8),
-                            content: Text("Failed to connect"),
+                            content: Text("연결에 실패하였습니다"),
                           ),
                         );
                       }
@@ -217,8 +217,8 @@ class _TabViewPageState extends State<TabViewPage> {
                       padding: EdgeInsets.only(top: 30),
                       child: Text(
                         widget.isFavorites
-                            ? "No favorite connections"
-                            : "No recently added connections",
+                            ? "로그인 정보가 존재하지 않습니다"
+                            : "최근 추가된 연결 정보가 존재하지 않습니다",
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
@@ -233,7 +233,7 @@ class _TabViewPageState extends State<TabViewPage> {
                         textColor: Theme.of(context).textTheme.body1.color,
                         icon: Icon(Icons.add, size: 22),
                         label: Text(
-                          "Add a new connection",
+                          "로그인 정보",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
@@ -259,7 +259,7 @@ class _TabViewPageState extends State<TabViewPage> {
                     child: Opacity(
                       opacity: .7,
                       child: Text(
-                        "No connections with this name or address",
+                        "이 주소로 연결된 서버가 존재하지 않습니다",
                         style: TextStyle(fontSize: 16),
                         textAlign: TextAlign.center,
                       ),

@@ -27,12 +27,12 @@ class _EditConnectionPageState extends State<EditConnectionPage> {
 
   Map<String, TextEditingController> _textEditingController = {
     // "name": TextEditingController(),
-    "name": TextEditingController(),
-    "address": TextEditingController(),
-    "port": TextEditingController(),
+    "name": TextEditingController()..text='Geomec Cloud',
+    "address": TextEditingController()..text='cloud.stpsystem.co.kr',
+    "port": TextEditingController()..text='1001',
     "username": TextEditingController(),
     "password": TextEditingController(),
-    "path": TextEditingController()
+    "path": TextEditingController()..text='/'
   };
 
   List<FocusNode> focusNodes = [
@@ -48,6 +48,7 @@ class _EditConnectionPageState extends State<EditConnectionPage> {
     String label,
     String hint,
     String key,
+    String name,
     bool isPassword = false,
     FocusNode focusNode,
     int index,
@@ -132,7 +133,7 @@ class _EditConnectionPageState extends State<EditConnectionPage> {
           ),
         ),
         title: Text(
-          widget.isNew ? "Add a new SFTP connection" : "Edit SFTP connection",
+          widget.isNew ? "로그인 정보" : "로그인 정보 수정",
           style: TextStyle(fontSize: 19),
         ),
         titleSpacing: 4,
@@ -186,39 +187,39 @@ class _EditConnectionPageState extends State<EditConnectionPage> {
                     bottom: 4.0,
                   ),
                   child: Column(children: <Widget>[
+                    // _buildTextField(
+                    //   label: "드라이브 이름",
+                    //   key: "name",
+                    //   index: 0,
+                    // ),
+                    // _buildTextField(
+                    //   label: "접속 주소",
+                    //   key: "address",
+                    //   index: 1,
+                    // ),
+                    // _buildTextField(
+                    //   label: "포트 (기본 포트 22)",
+                    //   hint: "22",
+                    //   key: "port",
+                    //   index: 2,
+                    // ),
                     _buildTextField(
-                      label: "Name (optional)",
-                      key: "name",
-                      index: 0,
-                    ),
-                    _buildTextField(
-                      label: "Address",
-                      key: "address",
-                      index: 1,
-                    ),
-                    _buildTextField(
-                      label: "Port (optional, default: 22)",
-                      hint: "22",
-                      key: "port",
-                      index: 2,
-                    ),
-                    _buildTextField(
-                      label: "Username",
+                      label: "아이디",
                       key: "username",
                       index: 3,
                     ),
                     _buildTextField(
-                      label: "Password",
+                      label: "패스워드",
                       key: "password",
                       isPassword: true,
                       index: 4,
                     ),
-                    _buildTextField(
-                      label: "Path (optional, default: ~)",
-                      hint: "~",
-                      key: "path",
-                      index: 5,
-                    ),
+                    // _buildTextField(
+                    //   label: "경로 (옵션, 기본값 : /)",
+                    //   hint: "/",
+                    //   key: "path",
+                    //   index: 5,
+                    // ),
                   ]),
                 ),
                 widget.isNew ? Divider() : Container(),
@@ -228,7 +229,7 @@ class _EditConnectionPageState extends State<EditConnectionPage> {
                         title: Padding(
                           padding: EdgeInsets.only(left: 10),
                           child: Text(
-                            "Add to Favorites",
+                            "이 연결을 저장",
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 16.4,

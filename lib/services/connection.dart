@@ -5,7 +5,7 @@ part 'connection.g.dart';
 @HiveType()
 class Connection {
   @HiveField(0)
-  String name;
+  String name = 'Geomec Cloud';
 
   @HiveField(1)
   String address;
@@ -23,12 +23,12 @@ class Connection {
   String path;
 
   Connection({
-    this.name = "",
-    this.address,
-    this.port = "22",
+    this.name = "Geomec Cloud",
+    this.address = "cloud.stpsystem.co.kr",
+    this.port = "1001",
     this.username = "",
     this.passwordOrKey = "",
-    this.path = "~",
+    this.path = "/",
   });
 
   void setter(String key, String value) {

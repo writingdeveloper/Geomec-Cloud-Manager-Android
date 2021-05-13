@@ -91,7 +91,7 @@ class QuickConnectionSheet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Quick connect",
+                  "빠른 연결",
                   style: TextStyle(
                     fontSize: 17.0,
                     fontWeight: FontWeight.w600,
@@ -104,8 +104,8 @@ class QuickConnectionSheet extends StatelessWidget {
                   focusNode: _focusNodes[0],
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
-                    hintText: "[username@]address[:port]",
-                    errorText: _showError ? "Input is not valid" : null,
+                    hintText: "[아이디@]주소[:포트번호]",
+                    errorText: _showError ? "입력된 값이 잘못되었습니다" : null,
                   ),
                   onChanged: (String value) {
                     _showError = false;
@@ -132,7 +132,7 @@ class QuickConnectionSheet extends StatelessWidget {
                       autocorrect: false,
                       focusNode: _focusNodes[1],
                       textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(labelText: "Username"),
+                      decoration: InputDecoration(labelText: "아이디"),
                       onChanged: (String value) => _connection.username = value,
                       onSubmitted: (String value) =>
                           FocusScope.of(context).requestFocus(_focusNodes[2]),
@@ -145,7 +145,7 @@ class QuickConnectionSheet extends StatelessWidget {
                   focusNode: _focusNodes[2],
                   textInputAction: TextInputAction.done,
                   decoration: InputDecoration(
-                    labelText: "Password",
+                    labelText: "패스워드",
                     suffixIcon: CustomIconButton(
                       icon: Icon(_passwordIsVisible
                           ? OMIcons.visibilityOff
@@ -185,7 +185,7 @@ class QuickConnectionSheet extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Connect",
+                                "로그인",
                                 style: TextStyle(
                                     fontSize: 16.0,
                                     color: Provider.of<CustomTheme>(context)
