@@ -195,17 +195,15 @@ class _AboutPageState extends State<AboutPage> {
                       )
                     : Icon(_isLatestVersion ? Icons.done : Icons.error_outline),
                 title: Text(
-                  _isLatestVersion == null
+                  _isLatestVersion != false
                       ? "업데이트 확인 중..."
                       : (_isLatestVersion
                           ? "앱이 최신버전입니다"
                           : "앱이 최신버전입니다"),
                 ),
               ),
-              // if (_isLatestVersion != null)
-              if (_isLatestVersion == null) // Temporary
-                // if (!_isLatestVersion)
-                if (!_isLatestVersion)
+              if (_isLatestVersion != false)
+                if (_isLatestVersion)
                   Padding(
                     padding: EdgeInsets.all(10),
                     child: Wrap(
@@ -239,6 +237,11 @@ class _AboutPageState extends State<AboutPage> {
           ListTile(
             leading: Icon(Icons.done),
             title: Text("SSH 모듈이 정상적으로 작동중입니다. (SSH:POINT=>1001)"),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.done),
+            title: Text("인터넷 연결이 정상입니다. (Connected)"),
           ),
         ],
       ),
